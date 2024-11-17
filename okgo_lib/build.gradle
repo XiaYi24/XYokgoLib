@@ -46,7 +46,7 @@ afterEvaluate {
             release(MavenPublication) {
                 groupId = 'com.github.XiaYi24'
                 artifactId = 'okgoLib'
-                version = '1.0.1'
+                version = '1.0.2'
             }
         }
     }
