@@ -24,7 +24,7 @@ android {
         }
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = '11'
     }
 }
 
@@ -49,7 +49,7 @@ afterEvaluate {
                 from components.release
                 groupId = 'com.github.XiaYi24'
                 artifactId = 'okgoLib'
-                version = '1.0.2'
+                version = '1.0.3'
             }
         }
         repositories {
