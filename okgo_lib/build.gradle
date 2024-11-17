@@ -1,7 +1,10 @@
 plugins {
     id 'com.android.library'
     id 'maven-publish'
+    id 'kotlin-android'
 }
+
+group = 'com.github.XiaYi24'
 
 android {
     namespace 'com.xy.okgoLib'
@@ -20,9 +23,8 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+    kotlinOptions {
+        jvmTarget = '1.8'
     }
 }
 
@@ -44,10 +46,14 @@ afterEvaluate {
         publications {
             // Creates a Maven publication called "release".
             release(MavenPublication) {
+                from components.release
                 groupId = 'com.github.XiaYi24'
                 artifactId = 'okgoLib'
                 version = '1.0.2'
             }
+        }
+        repositories {
+            mavenLocal()
         }
     }
 }
